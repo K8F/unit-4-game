@@ -4,36 +4,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
     <div id="title">
-        <h1>Crystal Collector</h1>
+        <h1>CrystalsCollector</h1>
     </div>
     <div id="instructions">
         <p>You will be given a random number at the start of the game.</p>
+
         <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+       
         <p>You win the game by matching your total score to a random number; you lose the game if your total score goes above the random number.</p>
+      
         <p>The value of each crystal is hidden from you until you click on it.</p>
+       
         <p>Each time when the game starts, the game will change the values of each crystal.</p>
     </div>
-    <div id="random-number"></div>
-    <div id="wins-losses"></div>
-    <div id="red-crystal">
-        <img src="assets/images/red-crystal.png" alt="Red Crystal">
+    <div id="random-number">55</div>
+    <div id="wins-losses">
+        <div id="wins">Wins:0</div>
+        <div id="losses">Losses:0</div>
     </div>
-    <div id="blue-crystal">
-        <img src="assets/images/blue-crystal.png" alt="Blue Crystal">
-    </div>
-    <div id="yellow-crystal">
-        <img src="assets/images/yellow-crystal.png" alt="Yellow Crystal">
-    </div>
-    <div id="green-crystal">
-        <img src="assets/images/green-crystal.png" alt="Green Crystal">
+    <div>
+        <img class="crystals" id="red-crystal" src="assets/images/red-crystal.png" alt="Red Crystal">
+        <img class="crystals" id="blue-crystal" src="assets/images/blue-crystal.png" alt="Blue Crystal">
+        <img class="crystals" id="yellow-crystal" src="assets/images/yellow-crystal.png" alt="Yellow Crystal">
+        <img class="crystals" id="green-crystal" src="assets/images/green-crystal.png" alt="Green Crystal">
     </div>
     <div id="score-text">
         <p>Your total score is:</p>
     </div>
-    <div id="score-number"></div>
+    <div id="score-number">0</div>
+    
     <div id="artist-credit"><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></div>
 </body>
 </html>

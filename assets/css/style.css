@@ -1,0 +1,110 @@
+body {
+    background-image: url(../images/wormz.png);
+}
+
+p{
+    margin-top: 2em;
+    margin-bottom: 2em;  
+}
+
+#title {
+    background-color: brown;
+    color: white;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+#instructions{
+    background-color: tan;
+    color: darkgreen;
+    width: 500px;
+    height: 500px;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-left:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    font: size 16;
+    font-weight: 800;
+}
+
+#random-number{
+    background-color:lightgreen;
+    color:maroon;
+    width: 150px;
+    height:75px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 5px;
+    padding-top:10px;
+    padding-left: 5px;
+    float:left;
+}
+
+#wins-losses{
+    background-color: cyan;
+    width: 100px;
+    height:75;
+    float:left;
+    margin-left: 5px;
+    padding-top:10px;
+    padding-left:5px;
+
+}
+
+#red-crystal{
+    clear:left;
+    float:left;
+}
+
+#blue-crystal{
+    float:left;
+}
+
+#yellow-crystal{
+    float:left;
+}
+
+#green-crystal{
+    float:left;
+}
+
+.crystals{
+    background-color: beige;
+    margin-left:5px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom:5px;
+    padding:10px;
+}
+
+#score-text{
+    clear:left;
+    background-color: teal;
+    color:white;
+    width:150px;
+    height:30px;
+    margin-bottom:5px;
+    margin-left:5px;
+    margin-top: 5px;
+}
+
+#score-number{
+    background-color: teal;
+    color:white;
+    font-size: 24px;
+    font-weight: 500;
+    width:150px;
+    height: 75px;
+    margin-left:5px;
+    margin-top:5px;
+    padding-top:10px;
+    padding-left:5px;
+}
