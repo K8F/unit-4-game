@@ -86,11 +86,14 @@ p{
 }
 
 #score-text{
-    clear:left;
+    clear:both;
+    font-size: small;
     background-color: teal;
     color:white;
     width:150px;
-    height:30px;
+    height:45px;
+    padding-top: 1px;
+    padding: left 5px;
     margin-bottom:5px;
     margin-left:5px;
     margin-top: 5px;
