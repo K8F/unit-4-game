@@ -10,9 +10,9 @@ var crystalGreen;
 
 //every time player clicks a crystal, crystal number adds to the current total under "your score"
 function addCrystalValue(crystal) {
-    console.log('adding crystal value: ' + crystal);
+    console.log("adding crystal value: " + crystal);
     totalScore += crystal;
-    console.log('new total score: ' + totalScore);
+    console.log("new total score: " + totalScore);
     $("#score-number").text(totalScore);
 
     //if total score matches score limit, player wins
@@ -33,18 +33,18 @@ function addCrystalValue(crystal) {
 function setCrystalValue(crystal){
     var newValue = 0;
     newValue = Math.floor(Math.random()*12+1);
-    console.log('generated crystal value: ' + newValue);
+    console.log("generated crystal value: " + newValue);
 
-    if (crystal == 'Red') {
+    if (crystal == "Red") {
         crystalRed = newValue;
     }
-    else if (crystal == 'Blue') {
+    else if (crystal == "Blue") {
         crystalBlue = newValue;
     }
-    else if (crystal == 'Yellow') {
+    else if (crystal == "Yellow") {
         crystalYellow = newValue;
     }
-    else if (crystal == 'Green') {
+    else if (crystal == "Green") {
         crystalGreen = newValue;
     }
 }
@@ -52,15 +52,15 @@ function setCrystalValue(crystal){
 //set value player is trying to meet between 19 and 120
 function setScoreLimit() {
     scoreLimit = Math.floor(Math.random()*(120-19 + 1) + 19);
-    console.log('score limit set to: ' + scoreLimit)
+    console.log("score limit set to: " + scoreLimit)
 }
 
 //iniate default state
 function initGame() {
-    setCrystalValue('Yellow');
-    setCrystalValue('Blue');
-    setCrystalValue('Green');
-    setCrystalValue('Red');
+    setCrystalValue("Yellow");
+    setCrystalValue("Blue");
+    setCrystalValue("Green");
+    setCrystalValue("Red");
 
     setScoreLimit();
 
@@ -105,10 +105,10 @@ function startGame(){
     $("#blue-crystal").on("click", function(){
         addCrystalValue(crystalBlue);
     });
-    $("#yellow-crystal").on('click', function(){
+    $("#yellow-crystal").on("click", function(){
         addCrystalValue(crystalYellow);
     });
-    $("#green-crystal").on('click', function(){
+    $("#green-crystal").on("click", function(){
         addCrystalValue(crystalGreen);
     });
 
