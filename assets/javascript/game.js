@@ -1,100 +1,118 @@
 //global variables
+var totalScore = 0;
+var scoreLimit = 0;
+var wins = 0;
+var losses = 0;
+var crystalRed;
+var crystalBlue;
+var crystalYellow;
+var crystalGreen;
 
-//numbers to add
-var firstNumber =0;
-var secondNumber =0;
+//every time player clicks a crystal, crystal number adds to the current total under "your score"
+function addCrystalValue(crystal) {
+    console.log('adding crystal value: ' + crystal);
+    totalScore += crystal;
+    console.log('new total score: ' + totalScore);
+    $("#score-number").text(totalScore);
 
-//user total score
-var totalScore=0;
+    //if total score matches score limit, player wins
 
-//user wins/losses
-var wins=0;
-var losses=0;
+    if (totalScore === scoreLimit){
+        winner()
+    }
 
-//display wins and losses
-$("div#wins").text("Wins: " + wins);
-$("div#losses").text("Losses: " + losses);
+    //if total score is higher than score limit, player loses
+
+    else if (totalScore > scoreLimit){
+        loser()
+    }
+}
 
 
+//sets random value for crystals between 1 and 12
+function setCrystalValue(crystal){
+    var newValue = 0;
+    newValue = Math.floor(Math.random()*12+1);
+    console.log('generated crystal value: ' + newValue);
 
- //when play wins, add to win score
+    if (crystal == 'Red') {
+        crystalRed = newValue;
+    }
+    else if (crystal == 'Blue') {
+        crystalBlue = newValue;
+    }
+    else if (crystal == 'Yellow') {
+        crystalYellow = newValue;
+    }
+    else if (crystal == 'Green') {
+        crystalGreen = newValue;
+    }
+}
 
- function winner() {
+//set value player is trying to meet between 19 and 120
+function setScoreLimit() {
+    scoreLimit = Math.floor(Math.random()*(120-19 + 1) + 19);
+    console.log('score limit set to: ' + scoreLimit)
+}
+
+//iniate default state
+function initGame() {
+    setCrystalValue('Yellow');
+    setCrystalValue('Blue');
+    setCrystalValue('Green');
+    setCrystalValue('Red');
+
+    setScoreLimit();
+
+    totalScore = 0;
+}
+
+//reset UI & initiates game 
+function reset(){
+    initGame();
+    $("div#score-number").text(totalScore);
+    $("div#score-limit").text(scoreLimit);
+}
+
+//when a player wins, add to win score and reset game
+function winner() {
     alert("You Won!!");
     wins++;
     $("div#wins").text("Wins: " + wins);
-    startGame();
+    reset();
 }
 
-//when player loses, add to lose score
+//when player loses, add to lose score and reset game
 function loser() {
     alert("You Lose!!");
     losses++;
     $("div#losses").text("Losses: " + losses);
-    startGame();
+    reset();
 }
 
-$("#image1").on("click", function() {
-    userTotal = userTotal + num1;
-    console.log("New userTotal " + userTotal);
-    $("#score").text(userTotal);
-
-    if (userTotal === random) {
-        winner()
-    }
-
-    else if (userTotal > random) {
-        loser()
-    } 
-})
-winner();
-
-//first time user clicks crystal, crystal number displays under "your score"
-
-//every time user clicks crystal, crystal number adds to the current total under "your score"
-//if total score matches random number, user wins
-//if total score is higher than random number, user loses
-
+//start
 function startGame(){
     
-    //total score resets to 0
+    reset();
+    //display wins and losses
+    $("div#wins").text("Wins: " + wins);
+    $("div#losses").text("Losses: " + losses);
 
-    $("div#score-number").text(firstNumber);
+    //when play clicks crystal, game adds values to total score
+    $("#red-crystal").on("click", function(){
+        addCrystalValue(crystalRed);
+    });
+    $("#blue-crystal").on("click", function(){
+        addCrystalValue(crystalBlue);
+    });
+    $("#yellow-crystal").on('click', function(){
+        addCrystalValue(crystalYellow);
+    });
+    $("#green-crystal").on('click', function(){
+        addCrystalValue(crystalGreen);
+    });
 
-    
-    //new random number between 19-120
-
-    var randomNumber = {};
-        randomNumber=Math.floor(Math.random()*(120-19 + 1) + 19);
-        $("div#random-number").text(randomNumber);
-        console.log(randomNumber)
-
-    //generate new numbers for crystals between 1-12
-    var crystalValues = {};
-        redCrystal = Math.floor(Math.random()*12+1);
-        blueCrystal = Math.floor(Math.random()*12+1);
-        yellowCrystal = Math.floor(Math.random()*12+1);
-        greenCrystal = Math.floor(Math.random()*12+1);
-
-console.log(redCrystal)
-console.log(blueCrystal)
-console.log(yellowCrystal)
-console.log(greenCrystal)
 }
 
 startGame()
 
-
-
-//buttons are clickable
-$( "#red-crystal" ).on("click () called." );
-$( "#blue-crystal" ).click(function() {
-    alert( "the number is " + blueCrystal );
-  });
-  $( "#yellow-crystal" ).click(function() {
-    alert( "Handler for .click() called." );
-  });
-
-  $( "#green-crystal" ).click(function() {
-    alert( "Handler for .click() called." );
-  });
